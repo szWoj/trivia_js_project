@@ -1,5 +1,4 @@
 const express = require('express');
-const ObjectID = require('mongodb').ObjectID;
 
 const createRouter = function (collection) {
 
@@ -17,11 +16,11 @@ const createRouter = function (collection) {
       });
   });
 
-  router.post('/', (req, res) =>{
+  router.post('/', (req, res) => {
     const newData = req.body;
     collection
     .insertOne(newData)
-    .then((result) =>{
+    .then((result) => {
         res.json(result.ops[0])
     })
     .catch((err) => {
