@@ -2,9 +2,9 @@
 use quizzes;
 db.dropDatabase();
 
-db.scores.insertOne(
-   { category : "Science",
-    scores :  6
-}
+// db.scores.insertOne(
+//    { category : "Science",
+//     scores :  6
+// }
 
-);
+// );
