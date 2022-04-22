@@ -1,0 +1,3 @@
+
+use scores;
+db.DropDatabase();
