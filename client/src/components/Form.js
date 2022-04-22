@@ -3,7 +3,7 @@ import {useState} from 'react';
 const Form = () => {
 
     return (
-        <p>form goes herep./p>
+        <p>form goes here.</p>
     )
 }
 

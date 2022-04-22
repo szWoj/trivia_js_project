@@ -1,9 +1,13 @@
 import {useState} from 'react';
+import QuizItem from './QuizItem.js'
 
-const Form = () => {
+const QuizList = () => {
 
     return (
-        <p>form goes here.</p>
+        <>
+            <p>quiz list container goes here.</p>
+            <QuizItem />
+        </>
     )
 }
 

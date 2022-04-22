@@ -3,7 +3,7 @@
 const QuizItem = () => {
 
     return (
-        <p>quiz question goes here./p>
+        <p>quiz question goes here</p>
     )
 }
 
