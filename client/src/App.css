@@ -30,3 +30,11 @@ h1{
   transform: translate(-50%, -50%);
   color: rgb(6, 6, 6);
 }
+
+.wizard{
+  border-radius: 60%;
+  width: 350px;
+  display: flex;
+  
+}
+
