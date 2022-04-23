@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import './App.css';
 import Form from './components/Form';
 import QuizList from './components/QuizList';
@@ -5,9 +6,26 @@ import Scores from './components/Scores';
 
 function App() {
 
-    const getQuestions = ()
-  https://opentdb.com/api_config.php
+  const[questions, setQuestions] = useState([0]);
+  const[selectedQuestion, setSelectedQuestion] = useState([null]);
+  const[difficulty, setDifficulty] =useState([0]);
+  const[selectedDifficulty, setSelectedDifficulty] = useState([null]);
+  
+  const getQuestions = () =>{
+    fetch('https://opentdb.com/api_config.php')
+    .then(res => res.json())
+    .then(questions = setQuestions(questions))
+    .then(difficulty = setDifficulty(difficulty))
 
+  }
+
+  const onQuestionClick = function(question){
+    setSelectedQuestion(question);
+
+    const onDifficultyClick = function(difficulty){
+      setSelectedDifficulty(difficulty);
+    }
+  }
 
 
 
