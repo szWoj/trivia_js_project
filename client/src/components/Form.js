@@ -34,8 +34,8 @@ const Form = ({getQuestions}) => {
         }
         getQuestions(data.category, data.difficulty);
         setNameInput('');
-        setCategoryInput('')
-        setDifficultyInput('')
+        setCategoryInput('');
+        setDifficultyInput('');
     }
     
     const categories =[
@@ -85,11 +85,11 @@ const Form = ({getQuestions}) => {
         <form onSubmit={handleFormSubmit}>
             <label htmlFor='name-input'>Input User's name</label>
             <input type='text' id='name-input' value={nameInput} onChange={handleName} required></input>
-            <select>
+            <select onChange={handleCategory}>
             <option value="" disabled>Choose a category</option>
             {categoryNodes}
             </select>
-            <select>
+            <select onChange={handleDifficulty}>
             <option value="" disabled>Choose difficulty</option>
             {difficultyNodes}
             </select>
