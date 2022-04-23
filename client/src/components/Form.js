@@ -20,25 +20,15 @@ const Form = ({getQuestions}) => {
         setDifficultyInput(event.target.value)
     }
 
-
-    
-    
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        const data = {
-            
-            name: nameInput,
-            category: categoryInput,
-            difficulty: difficultyInput,
-            
-        }
-        getQuestions(data.category, data.difficulty);
+        getQuestions(categoryInput, difficultyInput);
         setNameInput('');
         setCategoryInput('');
         setDifficultyInput('');
     }
     
-    const categories =[
+    const categories = [
         "General Knowledge",
         "Entertainment: Books",
         "Entertainment: Film",
@@ -61,9 +51,8 @@ const Form = ({getQuestions}) => {
         "Vehicles",
         "Entertainment: Comics",
         "Science: Gadgets",
-        "Entertainment: Japanese Anime & Mange",
+        "Entertainment: Japanese Anime & Manga",
         "Entertainment: Cartoon & Animation"
-        
         ]
 
         const difficulties = [
@@ -80,23 +69,22 @@ const Form = ({getQuestions}) => {
         })
     
     return (
-        <>
-        <p>form goes here.</p>
         <form onSubmit={handleFormSubmit}>
             <label htmlFor='name-input'>Input User's name</label>
             <input type='text' id='name-input' value={nameInput} onChange={handleName} required></input>
+
             <select onChange={handleCategory}>
-            <option value="" disabled>Choose a category</option>
-            {categoryNodes}
+                <option value="" disabled selected>Choose a category</option>
+                {categoryNodes}
             </select>
+
             <select onChange={handleDifficulty}>
-            <option value="" disabled>Choose difficulty</option>
-            {difficultyNodes}
+                <option value="" disabled selected>Choose difficulty</option>
+                {difficultyNodes}
             </select>
             
             <button type='submit'>Start Quiz</button>
         </form>
-        </>
     )
 }
 

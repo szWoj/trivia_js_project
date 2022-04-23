@@ -1,11 +1,9 @@
 import {useState} from 'react';
 import QuizItem from './QuizItem.js'
 
-const QuizList = () => {
+const QuizList = ({questions}) => {
 
-  
-
-
+    const [currentQuestion, setCurrentQuestion] = useState()
 
     return (
         <>

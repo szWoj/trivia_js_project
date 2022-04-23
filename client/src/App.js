@@ -8,22 +8,20 @@ function App() {
 
   const[questions, setQuestions] = useState([]);
   
-  const getQuestions = (category, difficulty) =>{
-    fetch(`https://opentdb.com/api_config.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`)
+  const getQuestions = (category, difficulty) => {
+    fetch(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`)
     .then(res => res.json())
-    .then(questions => setQuestions(questions))
-
+    .then(res => setQuestions(res.results))
   }
 
-  
   return (
       <>
       <img className="hero-image" src={require("./images/yellowbrickroad2.jpeg")} alt='Wizard of Oz'/>
       <div className='hero-text'>
       <h1>The Quizard of Oz</h1>
-      <Form />
+      <Form getQuestions={getQuestions}/>
       <Scores />
-      <QuizList />
+      <QuizList questions={questions}/>
       </div>
       <footer>2022 - Created by Annika, Daniel and Szymon - Smart as fuck</footer>
     </>
