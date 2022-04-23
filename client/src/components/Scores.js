@@ -1,19 +1,33 @@
 import {getScores} from '../QuizService.js'
 
-const Scores = () => {
+    const Scores = () => {
 
-    const scores = getScores().then((scoreList) => {
-        scoreList.map(score => {
-            return <p>{score["category"]} : {score["result"]}</p>
-        })
-    })
+        const [scores, setScores] = useState([]);
     
-
-    return (
-        <>
-            {scores}
-        </>
-    )
+        const baseURL = 'http://localhost:5000/api/scores/'
+    
+        const fetchScores = () => {
+            return fetch(baseURL)
+            .then(res => res.json())
+            .then(res => console.log(res))
+            .then((res) => setScores(res));
+        } 
+    
+        useEffect(() => {
+            fetchScores();
+        }, [])
+        
+        
+        // getScores();
+        // const scoresDisplay = scores.map(score => {
+        //     return <p>{score["category"]} : {score["result"]}</p>
+        // })
+    
+        return (
+            <>
+                {scores}
+            </>
+        )
 }
 
 export default Scores;
