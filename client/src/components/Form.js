@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import './Form.css';
 
 const Form = ({getQuestions}) => {
 
@@ -81,21 +82,22 @@ const Form = ({getQuestions}) => {
     
     return (
         <>
-        <p>form goes here.</p>
+        <div className='form'>
+        <p>Choose a category and the difficulty</p>
         <form onSubmit={handleFormSubmit}>
-            <label htmlFor='name-input'>Input User's name</label>
+            <label htmlFor='name-input'>Enter your name</label>
             <input type='text' id='name-input' value={nameInput} onChange={handleName} required></input>
             <select onChange={handleCategory}>
             <option value="" disabled>Choose a category</option>
             {categoryNodes}
-            </select>
+            </select>  
             <select onChange={handleDifficulty}>
             <option value="" disabled>Choose difficulty</option>
             {difficultyNodes}
             </select>
-            
             <button type='submit'>Start Quiz</button>
         </form>
+        </div>
         </>
     )
 }
