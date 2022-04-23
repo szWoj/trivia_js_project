@@ -1,14 +1,34 @@
+/* STYLING ENTER NAME / CHOOSE CATEGORY */
+
 .form{
-    font-size: 20px;
-}
-
-/* styling for the dropdown menu */
-select{
     font-size: 18px;
+    font-family: "Open Sans";
     font-weight: bold;
-    background-color: orange;
 }
 
+/* STYLING DROPDOWN MENU */
+
+select{
+  font-size: 18px;
+  font-weight: bold;
+  background-color: rgb(208, 131, 160);
+  font-family: "Open Sans";
+  border: 2px black solid;
+
+
+}
+
+/* STYLING FOOTER */
+footer{
+  font-size: 15px;
+  text-align: center;
+}
+
+
+/* WIZARD IMAGE STYLING */
+/* .wizard{
+  display:flex;
+} */
 
 /* BUTTON STYLING BEGINS HERE --------------- */
 button{
@@ -79,5 +99,3 @@ button{
   }
 
 /* BUTTON STYLING ENDS HERE ---------------------------- */
-
-
