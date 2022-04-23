@@ -1,9 +1,102 @@
 import {useState} from 'react';
 
-const Form = () => {
+const Form = ({getQuestions}) => {
 
+    const [nameInput, setNameInput] = useState('')
+    const [categoryInput, setCategoryInput] = useState('')
+    const [difficultyInput, setDifficultyInput] = useState('')
+    
+    // const [formData, setFormData] = useState([]);
+
+    const handleName = (event) => {
+        setNameInput(event.target.value)
+    }
+
+    const handleCategory = (event) => {
+        setCategoryInput(event.target.value)
+    }
+
+    const handleDifficulty = (event) => {
+        setDifficultyInput(event.target.value)
+    }
+
+
+    
+    
+    const handleFormSubmit = (event) => {
+        event.preventDefault();
+        const data = {
+            
+            name: nameInput,
+            category: categoryInput,
+            difficulty: difficultyInput,
+            
+        }
+        getQuestions(data.category, data.difficulty);
+        setNameInput('');
+        setCategoryInput('')
+        setDifficultyInput('')
+    }
+    
+    const categories =[
+        "General Knowledge",
+        "Entertainment: Books",
+        "Entertainment: Film",
+        "Entertainment: Music",
+        "Entertainment: Musicals & Theaters",
+        "Entertainment: Television",
+        "Entertainment: Video Games",
+        "Entertainment: Board Games",
+        "Science & Nature",
+        "Science: Computers",
+        "Science: Mathematics",
+        "Mythology",
+        "Sports",
+        "Geography",
+        "History",
+        "Politics",
+        "Art",
+        "Celebrities",
+        "Animals",
+        "Vehicles",
+        "Entertainment: Comics",
+        "Science: Gadgets",
+        "Entertainment: Japanese Anime & Mange",
+        "Entertainment: Cartoon & Animation"
+        
+        ]
+
+        const difficulties = [
+            "easy",
+            "medium", 
+            "hard"
+        ]
+
+        const categoryNodes = categories.map((category, index) => {
+            return <option value={index + 9}>{category}</option>
+        })
+        const difficultyNodes = difficulties.map(difficulty => {
+            return <option value={difficulty}>{difficulty}</option>
+        })
+    
     return (
+        <>
         <p>form goes here.</p>
+        <form onSubmit={handleFormSubmit}>
+            <label htmlFor='name-input'>Input User's name</label>
+            <input type='text' id='name-input' value={nameInput} onChange={handleName} required></input>
+            <select>
+            <option value="" disabled>Choose a category</option>
+            {categoryNodes}
+            </select>
+            <select>
+            <option value="" disabled>Choose difficulty</option>
+            {difficultyNodes}
+            </select>
+            
+            <button type='submit'>Start Quiz</button>
+        </form>
+        </>
     )
 }
 
