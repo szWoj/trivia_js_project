@@ -4,6 +4,13 @@ import QuizList from './components/QuizList';
 import Scores from './components/Scores';
 
 function App() {
+
+    const getQuestions = ()
+  https://opentdb.com/api_config.php
+
+
+
+
   return (
       <>
       <img className="hero-image" src={require("./images/yellowbrickroad2.jpeg")} alt='Wizard of Oz'/>
