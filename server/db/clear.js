@@ -4,7 +4,7 @@ db.dropDatabase();
 
 db.scores.insertOne(
    { category : "Science",
-    scores :  6
+    result :  6
 }
 
 );
