@@ -6,29 +6,16 @@ import Scores from './components/Scores';
 
 function App() {
 
-  const[questions, setQuestions] = useState([0]);
-  const[selectedQuestion, setSelectedQuestion] = useState([null]);
-  const[difficulty, setDifficulty] =useState([0]);
-  const[selectedDifficulty, setSelectedDifficulty] = useState([null]);
+  const[questions, setQuestions] = useState([]);
   
-  const getQuestions = () =>{
-    fetch('https://opentdb.com/api_config.php')
+  const getQuestions = (category, difficulty) =>{
+    fetch(`https://opentdb.com/api_config.php?amount=10&category=${category}&difficulty=${difficulty}`)
     .then(res => res.json())
-    .then(questions = setQuestions(questions))
-    .then(difficulty = setDifficulty(difficulty))
+    .then(questions => setQuestions(questions))
 
   }
 
-  const onQuestionClick = function(question){
-    setSelectedQuestion(question);
-
-    const onDifficultyClick = function(difficulty){
-      setSelectedDifficulty(difficulty);
-    }
-  }
-
-
-
+  
   return (
       <>
       <img className="hero-image" src={require("./images/yellowbrickroad2.jpeg")} alt='Wizard of Oz'/>
