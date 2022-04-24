@@ -16,7 +16,13 @@ const QuizList = ({questions}) => {
         const randomIndex = Math.floor(Math.random() * 4);
         options.splice(randomIndex, 0, currentQuestion.correct_answer);
         setChoices(options);
+        // addDefaultAnswer();
     }
+
+    // const addDefaultAnswer = () => {
+    //     const copyAnswers = [...answers];
+    //     copyAnswers.push(choices[0])
+    // }
 
     useEffect(() => {
         updateCurrentQuestion();
@@ -42,9 +48,11 @@ const QuizList = ({questions}) => {
         // else submit quiz, return answers
     }
 
+    const currentAnswer = answers[answers.length - 1];
+
     return (
         <>
-            <QuizItem currentQuestion={currentQuestion} takeAnswer={takeAnswer} nextQuestion={nextQuestion} choices={choices}/>
+            <QuizItem currentQuestion={currentQuestion} takeAnswer={takeAnswer} nextQuestion={nextQuestion} choices={choices} currentAnswer={currentAnswer}/>
         </>
     )
 }

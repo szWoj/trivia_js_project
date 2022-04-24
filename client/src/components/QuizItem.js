@@ -1,5 +1,5 @@
 
-const QuizItem = ({currentQuestion, takeAnswer, nextQuestion, choices}) => {
+const QuizItem = ({currentQuestion, takeAnswer, nextQuestion, choices, currentAnswer}) => {
 
     const handleAnswer = (e) => {
         takeAnswer(e.target.value);
@@ -8,14 +8,17 @@ const QuizItem = ({currentQuestion, takeAnswer, nextQuestion, choices}) => {
     const choicesRadio = choices.map((choice, index) => {
         return (
             <>
-            <input type="radio" name="choices" id={index} value={choice} onChange={handleAnswer} checked={index === 0}/>
+            <input type="radio" name="choices" id={index} value={choice} onChange={handleAnswer} checked={choice === currentAnswer}/>
             <label htmlFor={index}>{choice}</label>
             <br></br>
             </>
         )
     })
 
-    const handleClick = (e) => {
+    const handleClick = () => {
+        if(!choices.includes(currentAnswer)){
+            takeAnswer("");
+        }
         nextQuestion();
     }
 
