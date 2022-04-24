@@ -1,21 +1,23 @@
 
-const QuizItem = ({currentQuestion, takeAnswer, nextQuestion}) => {
+const QuizItem = ({currentQuestion, takeAnswer, nextQuestion, choices}) => {
 
-    
-    const choices = [...currentQuestion.incorrect_answers];
-    const randomIndex = Math.floor(Math.random() * 4);
-    choices.splice(randomIndex, 0, currentQuestion.correct_answer);
-    console.log(choices);
+    const handleAnswer = (e) => {
+        takeAnswer(e.target.value);
+    }
+
     const choicesRadio = choices.map((choice, index) => {
         return (
             <>
-            <input type="radio" name="choices" id={index} value={choice}/>
+            <input type="radio" name="choices" id={index} value={choice} onChange={handleAnswer} checked={index === 0}/>
             <label htmlFor={index}>{choice}</label>
             <br></br>
             </>
         )
     })
 
+    const handleClick = (e) => {
+        nextQuestion();
+    }
 
     return (
         <>

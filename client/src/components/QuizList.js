@@ -5,18 +5,32 @@ const QuizList = ({questions}) => {
 
     const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
     const [answers, setAnswers] = useState([]);
+    const [choices, setChoices] = useState([]);
 
     const updateCurrentQuestion = () => {
         setCurrentQuestion(questions[0]);
     }
 
+    const updateChoices = () => {
+        const options = [...currentQuestion.incorrect_answers];
+        const randomIndex = Math.floor(Math.random() * 4);
+        options.splice(randomIndex, 0, currentQuestion.correct_answer);
+        setChoices(options);
+    }
+
     useEffect(() => {
-        updateCurrentQuestion()
+        updateCurrentQuestion();
     }, [questions]);
+
+    useEffect(() => {
+        updateChoices();
+    }, [currentQuestion]);
 
     const takeAnswer = (answer) => {
         const copyAnswers = [...answers];
-        copyAnswers.push(answer);
+        if(copyAnswers.length > questions.indexOf(currentQuestion)){
+            copyAnswers.splice(copyAnswers.length - 1, 1, answer);
+        } else copyAnswers.push(answer);
         setAnswers(copyAnswers);
     }
 
@@ -30,7 +44,7 @@ const QuizList = ({questions}) => {
 
     return (
         <>
-            <QuizItem currentQuestion={currentQuestion} takeAnswer={takeAnswer} nextQuestion={nextQuestion}/>
+            <QuizItem currentQuestion={currentQuestion} takeAnswer={takeAnswer} nextQuestion={nextQuestion} choices={choices}/>
         </>
     )
 }
