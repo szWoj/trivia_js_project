@@ -79,11 +79,11 @@ const Form = ({getQuestions}) => {
             <div className="select">
 
             <select className='mySelect' onChange={handleCategory}>
-            <option value="" disabled>Choose a category</option>
+            <option value="" disabled selected>Choose a category</option>
             {categoryNodes}
             </select>  
             <select className='mySelect' onChange={handleDifficulty}>
-            <option value="" disabled>Choose difficulty</option>
+            <option value="" disabled selected>Choose difficulty</option>
             {difficultyNodes}
             </select>
             </div>

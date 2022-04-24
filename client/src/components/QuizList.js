@@ -1,10 +1,18 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import QuizItem from './QuizItem.js'
 
 const QuizList = ({questions}) => {
 
     const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
     const [answers, setAnswers] = useState([]);
+
+    const updateCurrentQuestion = () => {
+        setCurrentQuestion(questions[0]);
+    }
+
+    useEffect(() => {
+        updateCurrentQuestion()
+    }, [questions]);
 
     const takeAnswer = (answer) => {
         const copyAnswers = [...answers];
@@ -22,7 +30,7 @@ const QuizList = ({questions}) => {
 
     return (
         <>
-            <QuizItem questions={questions} currentQuestion={currentQuestion} takeAnswer={takeAnswer} nextQuestion={nextQuestion}/>
+            <QuizItem currentQuestion={currentQuestion} takeAnswer={takeAnswer} nextQuestion={nextQuestion}/>
         </>
     )
 }
