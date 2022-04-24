@@ -76,14 +76,14 @@ const Form = ({getQuestions}) => {
             <input type='text' id='name-input' value={nameInput} onChange={handleName} required></input>
 
             <p>Choose a category and the difficulty</p>
-            <div class="select">
+            <div className="select">
 
             <select className='mySelect' onChange={handleCategory}>
-            <option value="" disabled>Choose a category</option>
+            <option value="" disabled selected>Choose a category</option>
             {categoryNodes}
             </select>  
             <select className='mySelect' onChange={handleDifficulty}>
-            <option value="" disabled>Choose difficulty</option>
+            <option value="" disabled selected>Choose difficulty</option>
             {difficultyNodes}
             </select>
             </div>

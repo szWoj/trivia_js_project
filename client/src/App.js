@@ -7,8 +7,16 @@ import Scores from './components/Scores';
 
 function App() {
 
+  const[questions, setQuestions] = useState([
+    {
+      question: '',
+      correct_answer: '',
+      incorrect_answers: []
+  }
+]);
 
-  const[questions, setQuestions] = useState([]);
+  // const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
+  // const [answers, setAnswers] = useState([]);
   
   const getQuestions = (category, difficulty) => {
     fetch(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`)
