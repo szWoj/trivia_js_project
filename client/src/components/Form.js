@@ -21,25 +21,15 @@ const Form = ({getQuestions}) => {
         setDifficultyInput(event.target.value)
     }
 
-
-    
-    
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        const data = {
-            
-            name: nameInput,
-            category: categoryInput,
-            difficulty: difficultyInput,
-            
-        }
-        getQuestions(data.category, data.difficulty);
+        getQuestions(categoryInput, difficultyInput);
         setNameInput('');
         setCategoryInput('');
         setDifficultyInput('');
     }
     
-    const categories =[
+    const categories = [
         "General Knowledge",
         "Entertainment: Books",
         "Entertainment: Film",
@@ -62,9 +52,8 @@ const Form = ({getQuestions}) => {
         "Vehicles",
         "Entertainment: Comics",
         "Science: Gadgets",
-        "Entertainment: Japanese Anime & Mange",
+        "Entertainment: Japanese Anime & Manga",
         "Entertainment: Cartoon & Animation"
-        
         ]
 
         const difficulties = [
@@ -81,11 +70,11 @@ const Form = ({getQuestions}) => {
         })
     
     return (
-        <>
         <div className='form'>
         <form onSubmit={handleFormSubmit}>
             <label htmlFor='name-input'>Enter your name</label>
             <input type='text' id='name-input' value={nameInput} onChange={handleName} required></input>
+
             <p>Choose a category and the difficulty</p>
             <div class="select">
 
@@ -101,7 +90,6 @@ const Form = ({getQuestions}) => {
             <button type='submit'>Start Quiz</button>
         </form>
         </div>
-        </>
     )
 }
 

@@ -14,9 +14,9 @@ import {useState, useEffect} from 'react';
             .then((res) => setScores(res));
         } 
     
-        useEffect(() => {
-            fetchScores();
-        }, [])
+        // useEffect(() => {
+        //     fetchScores();
+        // }, [])
         
         
         // getScores();
