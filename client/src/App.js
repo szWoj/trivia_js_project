@@ -4,7 +4,9 @@ import Form from './components/Form';
 import QuizList from './components/QuizList';
 import Scores from './components/Scores';
 
+
 function App() {
+
 
   const[questions, setQuestions] = useState([]);
   
@@ -14,7 +16,6 @@ function App() {
     .then(questions => setQuestions(questions))
 
   }
-
   
   return (
       <>
