@@ -6,13 +6,13 @@ const QuizItem = ({currentQuestion, takeAnswer, nextQuestion, choices, currentAn
     }
 
     const choicesRadio = choices.map((choice, index) => {
-        return (
-            <>
-            <input type="radio" name="choices" id={index} value={choice} onChange={handleAnswer} checked={choice === currentAnswer}/>
-            <label htmlFor={index}>{choice}</label>
-            <br></br>
-            </>
-        )
+    return (
+        <>
+        <input type="radio" name="choices" id={index} value={choice} onChange={handleAnswer} checked={choice === currentAnswer}/>
+        <label htmlFor={index}>{choice}</label>
+        <br></br>
+        </>
+    )
     })
 
     const handleClick = () => {
@@ -26,9 +26,9 @@ const QuizItem = ({currentQuestion, takeAnswer, nextQuestion, choices, currentAn
         <>
             <h2>{currentQuestion.question}</h2>
             <div className="flex-container">
-            {choicesRadio}
+            {currentQuestion.question !== '' ? choicesRadio : ""}
             </div>
-            <button onClick={handleClick}>Next Question</button>
+            {choicesRadio.length > 1 ? <button onClick={handleClick}>Next Question</button> : ""}
         {/* <img className="wizard" src={require("../images/wizard2.jpeg")} alt='Wizard of Oz'/>  */}
 
         </>

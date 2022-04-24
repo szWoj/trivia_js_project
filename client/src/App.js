@@ -7,11 +7,13 @@ import Scores from './components/Scores';
 
 function App() {
 
-  const[questions, setQuestions] = useState([{
+  const[questions, setQuestions] = useState([
+    {
       question: '',
       correct_answer: '',
       incorrect_answers: []
-  }]);
+  }
+]);
 
   // const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
   // const [answers, setAnswers] = useState([]);
