@@ -4,7 +4,9 @@ import Form from './components/Form';
 import QuizList from './components/QuizList';
 import Scores from './components/Scores';
 
+
 function App() {
+
 
   const[questions, setQuestions] = useState([]);
   
@@ -13,7 +15,7 @@ function App() {
     .then(res => res.json())
     .then(res => setQuestions(res.results))
   }
-
+  
   return (
       <>
       <img className="hero-image" src={require("./images/yellowbrickroad2.jpeg")} alt='Wizard of Oz'/>
