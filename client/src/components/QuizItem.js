@@ -9,7 +9,7 @@ const QuizItem = ({currentQuestion, takeAnswer, nextQuestion, choices, currentAn
     return (
         <>
         <input type="radio" name="choices" id={index} value={choice} onChange={handleAnswer} checked={choice === currentAnswer}/>
-        <label htmlFor={index}>{choice}</label>
+        <label htmlFor={index}>{choice.replaceAll("&quot;", '"').replaceAll("&#039;", "'")}</label>
         <br></br>
         </>
     )
@@ -24,7 +24,7 @@ const QuizItem = ({currentQuestion, takeAnswer, nextQuestion, choices, currentAn
 
     return (
         <>
-            <h2>{currentQuestion.question}</h2>
+            <h2>{currentQuestion.question.replaceAll("&quot;", '"').replaceAll("&#039;", "'")}</h2>
             <div className="flex-container">
             {currentQuestion.question !== '' ? choicesRadio : ""}
             </div>
