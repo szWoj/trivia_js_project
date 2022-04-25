@@ -4,9 +4,10 @@ const Answer = ({question, userAnswer, correctAnswer}) => {
 
     return (
         <>
-            <p>{question}</p>
-            <p>{userAnswer === "" ? "No Answer" : userAnswer}</p>
-            <p>{userAnswer === correctAnswer ? "" : correctAnswer}</p>
+            <p>{question.replaceAll("&quot;", '"').replaceAll("&#039;", "'")}</p>
+            <p>Your answer: {userAnswer === "" ? "No Answer" : userAnswer.replaceAll("&quot;", '"').replaceAll("&#039;", "'") }</p>
+            <p>Correct answer: {userAnswer === correctAnswer ? "" : correctAnswer.replaceAll("&quot;", '"').replaceAll("&#039;", "'")}</p>
+            <hr/>
         </>
     )
 }
