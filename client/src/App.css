@@ -47,3 +47,11 @@ h1{
   opacity: 60%;
 }
 
+.flex-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-container > div{
+  width: 500px;
+}
