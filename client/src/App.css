@@ -17,8 +17,8 @@ h1{
   height: 1000px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+  background-size:cover;
+  position:relative;
   opacity: 70%;
 }
 
@@ -36,5 +36,11 @@ h1{
   width: 350px;
   display: flex;
   
+}
+
+.answer{
+  font-size: 15px;
+  margin: 5px;
+
 }
 

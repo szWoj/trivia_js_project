@@ -3,11 +3,11 @@
 const Answer = ({question, userAnswer, correctAnswer}) => {
 
     return (
-        <>
-            <p>{question}</p>
-            <p>{userAnswer === "" ? "No Answer" : userAnswer}</p>
-            <p>{userAnswer === correctAnswer ? "" : correctAnswer}</p>
-        </>
+        <div className="answer">
+            <h3>{question}</h3>
+            <p>Your answer : {userAnswer === "" ? "No Answer" : userAnswer}</p>
+            <p>Correct {userAnswer === correctAnswer ? "" : correctAnswer}</p>
+        </div>
     )
 }
 

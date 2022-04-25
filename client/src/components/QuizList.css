@@ -1,5 +1,18 @@
-.quiz-box {
-    max-height: 10px;
-    margin: 5px;
-    border: 2px solid black;
+
+
+.fixedHeight{
+    float:left;
+    height: 250px;
+    width:250px; 
+    padding:10px;
+    border: 1px;
+    border-color: black;
+}
+
+.content{
+    height: 400px;
+    width: 1000px;
+    overflow: auto;
+    padding-right: 200%;
+    
 }
