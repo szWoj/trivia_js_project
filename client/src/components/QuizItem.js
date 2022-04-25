@@ -1,5 +1,5 @@
 
-const QuizItem = ({currentQuestion, takeAnswer, nextQuestion, choices, currentAnswer}) => {
+const QuizItem = ({currentQuestion, takeAnswer, nextQuestion, choices, currentAnswer, answers}) => {
 
     const handleAnswer = (e) => {
         takeAnswer(e.target.value);
@@ -28,7 +28,7 @@ const QuizItem = ({currentQuestion, takeAnswer, nextQuestion, choices, currentAn
             <div className="flex-container">
             {currentQuestion.question !== '' ? choicesRadio : ""}
             </div>
-            {choicesRadio.length > 1 ? <button onClick={handleClick}>Next Question</button> : ""}
+            {choicesRadio.length > 1 ? <button onClick={handleClick}>{answers.length === 10 ? "Submit Quiz" : "Next Question"}</button> : ""}
         {/* <img className="wizard" src={require("../images/wizard2.jpeg")} alt='Wizard of Oz'/>  */}
 
         </>

@@ -1,11 +1,14 @@
 import {useState, useEffect} from 'react';
-import QuizItem from './QuizItem.js'
+import QuizItem from './QuizItem.js';
+import Answers from './Answers.js';
+
 
 const QuizList = ({questions}) => {
 
     const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
     const [answers, setAnswers] = useState([]);
     const [choices, setChoices] = useState([]);
+    const [finished, setFinished] = useState(false);
 
     const updateCurrentQuestion = () => {
         setCurrentQuestion(questions[0]);
@@ -26,6 +29,7 @@ const QuizList = ({questions}) => {
 
     useEffect(() => {
         updateCurrentQuestion();
+        setFinished(false);
     }, [questions]);
 
     useEffect(() => {
@@ -45,14 +49,20 @@ const QuizList = ({questions}) => {
         if(index < 9){
             setCurrentQuestion(questions[index+1]);
         }
-        // else submit quiz, return answers
+        else submitQuiz();
     }
 
     const currentAnswer = answers[answers.length - 1];
 
+    const submitQuiz = () => {
+        setFinished(true);
+    }
+
     return (
         <>
-            <QuizItem currentQuestion={currentQuestion} takeAnswer={takeAnswer} nextQuestion={nextQuestion} choices={choices} currentAnswer={currentAnswer}/>
+            { finished ? 
+            <Answers /> :
+            <QuizItem currentQuestion={currentQuestion} takeAnswer={takeAnswer} nextQuestion={nextQuestion} choices={choices} currentAnswer={currentAnswer} answers={answers}/>}
         </>
     )
 }
