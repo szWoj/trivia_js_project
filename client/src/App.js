@@ -24,16 +24,16 @@ function App() {
     .then(res => setQuestions(res.results))
   }
   
+  
+
   return (
       <>
       <img className="hero-image" src={require("./images/yellowbrickroad2.jpeg")} alt='Wizard of Oz'/>
       <div className='hero-text'>
       <h1>The Quizard of Oz</h1>
-      <div className='flex-container'>
-      <div className='item1'><Form getQuestions={getQuestions}/></div>
-      <div className='item2'><Scores /></div>
-      <div className='item2'><QuizList questions={questions}/></div>
-      </div>
+      <Form getQuestions={getQuestions}/>
+      <Scores />
+      <QuizList questions={questions}/>
       </div>
       <footer>2022 - Created by Annika, Daniel and Szymon - Smart as fuck</footer>
     </>
