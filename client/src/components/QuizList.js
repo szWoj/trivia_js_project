@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import QuizItem from './QuizItem.js';
 import Answers from './Answers.js';
+import './QuizList.css'
 
 
 const QuizList = ({questions}) => {
@@ -30,6 +31,7 @@ const QuizList = ({questions}) => {
     useEffect(() => {
         updateCurrentQuestion();
         setFinished(false);
+        setAnswers([]);
     }, [questions]);
 
     useEffect(() => {
@@ -59,11 +61,11 @@ const QuizList = ({questions}) => {
     }
 
     return (
-        <>
+        <div className='quiz-box'>
             { finished ? 
-            <Answers /> :
+            <Answers answers={answers} questions={questions}/> :
             <QuizItem currentQuestion={currentQuestion} takeAnswer={takeAnswer} nextQuestion={nextQuestion} choices={choices} currentAnswer={currentAnswer} answers={answers}/>}
-        </>
+        </div>
     )
 }
 
