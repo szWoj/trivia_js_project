@@ -5,14 +5,14 @@ import {useState, useEffect} from 'react';
 
         const [scores, setScores] = useState([]);
     
-        const baseURL = 'http://localhost:5000/api/scores/'
+        // const baseURL = 'http://localhost:5000/api/scores/'
     
-        const fetchScores = () => {
-            return fetch(baseURL)
-            .then(res => res.json())
-            .then(res => console.log(res))
-            .then((res) => setScores(res));
-        } 
+        // const fetchScores = () => {
+        //     return fetch(baseURL)
+        //     .then(res => res.json())
+        //     .then(res => console.log(res))
+        //     .then((res) => setScores(res));
+        // } 
     
         // useEffect(() => {
         //     fetchScores();

@@ -1,15 +1,17 @@
 import Answer from "./Answer";
 
-const Answers = ({questions, answers}) => {
+const Answers = ({questions, answers, score}) => {
 
     const answersDisplay = [];
 
     for(let i = 0; i < questions.length; i++){
+
         const answer = {};
         answer["question"] = questions[i].question;
         answer["user_answer"] = answers[i];
         answer["correct_answer"] = questions[i].correct_answer;
         answersDisplay.push(answer);
+
     }
 
     const answerNodes = answersDisplay.map((answer, index) => {
@@ -18,7 +20,8 @@ const Answers = ({questions, answers}) => {
 
     return (
         <>
-        {answerNodes}
+            <h3>You scored {score} out of 10</h3>
+            {answerNodes}
         </>
     )
 }
