@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import QuizItem from './QuizItem.js';
 import Answers from './Answers.js';
 import './QuizList.css'
+import './QuizItem.css'
 
 
 const QuizList = ({questions, addScore}) => {
