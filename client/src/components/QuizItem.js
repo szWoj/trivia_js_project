@@ -23,16 +23,12 @@ const QuizItem = ({currentQuestion, takeAnswer, nextQuestion, choices, currentAn
     }
 
     return (
-        <>
+        <div className='question'>
             <h2>{currentQuestion.question.replaceAll("&quot;", '"').replaceAll("&#039;", "'")}</h2>
-            <div className="flex-container">
             {currentQuestion.question !== '' ? choicesRadio : ""}
-            </div>
             {choicesRadio.length > 1 ? <button onClick={handleClick}>{answers.length === 10 ? "Submit Quiz" : "Next Question"}</button> : ""}
         {/* <img className="wizard" src={require("../images/wizard2.jpeg")} alt='Wizard of Oz'/>  */}
-
-        </>
-
+        </div>
     )
 }
 

@@ -11,7 +11,8 @@
 select{
   font-size: 18px;
   font-weight: bold;
-  background-color: rgb(208, 131, 160);
+  background-color: rgb(194, 37, 6);
+  opacity: 50%;
   font-family: "Open Sans";
   border: 2px black solid;
 
