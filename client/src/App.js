@@ -8,12 +8,14 @@ import Scores from './components/Scores';
 function App() {
 
   const[questions, setQuestions] = useState([
-    {
-      question: '',
-      correct_answer: '',
-      incorrect_answers: []
-  }
-]);
+      {
+        question: '',
+        correct_answer: '',
+        incorrect_answers: []
+    }
+  ]);
+  
+  const [scores, setScores] = useState([]);
 
   // const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
   // const [answers, setAnswers] = useState([]);
@@ -24,18 +26,20 @@ function App() {
     .then(res => setQuestions(res.results))
   }
   
-  
+  const addScore = (newScore) => {
+    setScores([...scores, newScore]);
+  }
 
   return (
       <>
       <img className="hero-image" src={require("./images/yellowbrickroad2.jpeg")} alt='Wizard of Oz'/>
       <div className='hero-text'>
-      <h1>The Quizard of Oz</h1>
-      <div className='flex-container'>
-      <div><Form getQuestions={getQuestions}/></div>
-      <div><Scores /></div>
-      <div><QuizList questions={questions}/></div>
-      </div>
+        <h1>The Quizard of Oz</h1>
+        <div className='flex-container'>
+          <div><Form getQuestions={getQuestions}/></div>
+          <div><Scores scores={scores} /></div>
+          <div><QuizList questions={questions} addScore={addScore} /></div>
+        </div>
       </div>
       <footer>2022 - Created by Annika, Daniel and Szymon - Smart as fuck</footer>
     </>

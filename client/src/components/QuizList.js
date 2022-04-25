@@ -4,12 +4,13 @@ import Answers from './Answers.js';
 import './QuizList.css'
 
 
-const QuizList = ({questions}) => {
+const QuizList = ({questions, addScore}) => {
 
     const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
     const [answers, setAnswers] = useState([]);
     const [choices, setChoices] = useState([]);
     const [finished, setFinished] = useState(false);
+    const [score, setScore] = useState(0);
 
     const updateCurrentQuestion = () => {
         setCurrentQuestion(questions[0]);
@@ -32,6 +33,7 @@ const QuizList = ({questions}) => {
         updateCurrentQuestion();
         setFinished(false);
         setAnswers([]);
+        setScore(0);
     }, [questions]);
 
     useEffect(() => {
@@ -54,20 +56,38 @@ const QuizList = ({questions}) => {
         else submitQuiz();
     }
 
-    const currentAnswer = answers[answers.length - 1];
-
     const submitQuiz = () => {
         setFinished(true);
+        generateScore();
     }
+
+    const generateScore = () => {
+        let newScore = 0;
+        for(let i = 0; i < questions.length; i++){
+            if(answers[i] === questions[i].correct_answer){
+                newScore++;
+            }
+        }
+        setScore(newScore);
+        const newResult = {};
+        const category = currentQuestion.category;
+        const difficulty = currentQuestion.difficulty;
+        newResult["category"] = category;
+        newResult["difficulty"] = difficulty;
+        newResult["score"] = newScore;
+        addScore(newResult);
+    }
+
+    const currentAnswer = answers[answers.length - 1];
 
     return (
         <div className='fixedHeight'>
         <div className='content'>
             { finished ? 
-            <Answers answers={answers} questions={questions}/> :
-            <QuizItem currentQuestion={currentQuestion} takeAnswer={takeAnswer} nextQuestion={nextQuestion} choices={choices} currentAnswer={currentAnswer} answers={answers}/>}
-            </div>
-            </div>
+            <Answers answers={answers} questions={questions} score={score}/> :
+            <QuizItem currentQuestion={currentQuestion} takeAnswer={takeAnswer} nextQuestion={nextQuestion} choices={choices} currentAnswer={currentAnswer} answers={answers} />}
+        </div>
+        </div>
     )
 }
 
