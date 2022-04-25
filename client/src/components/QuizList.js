@@ -81,10 +81,12 @@ const QuizList = ({questions, addScore}) => {
     const currentAnswer = answers[answers.length - 1];
 
     return (
-        <div className='quiz-box'>
+        <div className='fixedHeight'>
+        <div className='content'>
             { finished ? 
             <Answers answers={answers} questions={questions} score={score}/> :
             <QuizItem currentQuestion={currentQuestion} takeAnswer={takeAnswer} nextQuestion={nextQuestion} choices={choices} currentAnswer={currentAnswer} answers={answers} />}
+        </div>
         </div>
     )
 }
