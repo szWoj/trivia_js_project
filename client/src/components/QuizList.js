@@ -61,11 +61,13 @@ const QuizList = ({questions}) => {
     }
 
     return (
-        <div className='quiz-box'>
+        <div className='fixedHeight'>
+        <div className='content'>
             { finished ? 
             <Answers answers={answers} questions={questions}/> :
             <QuizItem currentQuestion={currentQuestion} takeAnswer={takeAnswer} nextQuestion={nextQuestion} choices={choices} currentAnswer={currentAnswer} answers={answers}/>}
-        </div>
+            </div>
+            </div>
     )
 }
 
