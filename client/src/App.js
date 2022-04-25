@@ -35,7 +35,7 @@ function App() {
       <img className="hero-image" src={require("./images/yellowbrickroad2.jpeg")} alt='Wizard of Oz'/>
       <div className='hero-text'>
       <h1>The Quizard of Oz</h1>
-      <Form getQuestions={getQuestions}/>
+      <Form getQuestions={getQuestions} />
       <Scores scores={scores}/>
       <QuizList questions={questions} addScore={addScore} />
       </div>

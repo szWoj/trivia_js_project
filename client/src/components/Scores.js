@@ -1,9 +1,22 @@
-import {getScores} from '../QuizService.js'
-import {useState, useEffect} from 'react';
+// import {getScores} from '../QuizService.js'
+// import {useState, useEffect} from 'react';
 
-    const Scores = () => {
+    const Scores = ({scores}) => {
 
-        const [scores, setScores] = useState([]);
+        let scoresDisplay;
+
+        if(scores.length > 0){
+            scoresDisplay = scores.map((score) => {
+                return (
+                    <>
+                        <h3>{score.score} out of 10</h3>
+                        <p>Category: {score.category}</p>
+                        <p>Difficulty: {score.difficulty}</p>
+                    </>
+                )
+            })
+        }
+        // const [scores, setScores] = useState([]);
     
         // const baseURL = 'http://localhost:5000/api/scores/'
     
@@ -26,7 +39,7 @@ import {useState, useEffect} from 'react';
     
         return (
             <>
-                {scores}
+                {scoresDisplay}
             </>
         )
 }

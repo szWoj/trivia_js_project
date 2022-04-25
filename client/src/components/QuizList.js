@@ -62,14 +62,20 @@ const QuizList = ({questions, addScore}) => {
     }
 
     const generateScore = () => {
-        let score = 0;
+        let newScore = 0;
         for(let i = 0; i < questions.length; i++){
             if(answers[i] === questions[i].correct_answer){
-                score++;
+                newScore++;
             }
         }
-        addScore(score);
-        setScore(score);
+        setScore(newScore);
+        const newResult = {};
+        const category = currentQuestion.category;
+        const difficulty = currentQuestion.difficulty;
+        newResult["category"] = category;
+        newResult["difficulty"] = difficulty;
+        newResult["score"] = newScore;
+        addScore(newResult);
     }
 
     const currentAnswer = answers[answers.length - 1];
