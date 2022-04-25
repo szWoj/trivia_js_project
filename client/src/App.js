@@ -3,6 +3,7 @@ import './App.css';
 import Form from './components/Form';
 import QuizList from './components/QuizList';
 import Scores from './components/Scores';
+import { postScores } from './ScoresServices';
 
 
 function App() {
@@ -27,7 +28,13 @@ function App() {
   }
   
   const addScore = (newScore) => {
-    setScores([...scores, newScore]);
+    // setScores([...scores, newScore]); //comment out?
+    const newScores = [...scores]
+    postScores(newScore)
+    .then(res => {
+      newScore.push(res)
+      setScores(newScores)
+    })
   }
 
   return (
