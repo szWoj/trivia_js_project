@@ -40,7 +40,9 @@ h1{
 
 .answer{
   font-size: 15px;
-  margin: 5px;
+  margin: 20px;
+  padding: 5px;
+  border: 1.5px solid black;
 
 }
 

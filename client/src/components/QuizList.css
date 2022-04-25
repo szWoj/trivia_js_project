@@ -1,4 +1,4 @@
-
+/* STYLING FOR THE DIV AND SCROLLBAR    */
 
 .fixedHeight{
     float:left;
@@ -7,6 +7,7 @@
     padding:10px;
     border: 1px;
     border-color: black;
+    box-sizing: border-box;
 }
 
 .content{
@@ -14,5 +15,6 @@
     width: 1000px;
     overflow: auto;
     padding-right: 200%;
-    
+
 }
+
