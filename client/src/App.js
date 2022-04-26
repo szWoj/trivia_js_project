@@ -4,6 +4,9 @@ import Form from './components/Form';
 import QuizList from './components/QuizList';
 import Scores from './components/Scores';
 import { getScores, postScores } from './ScoresServices';
+import PlaySound from './components/PlaySound';
+
+
 
 
 function App() {
@@ -58,9 +61,11 @@ function App() {
   return (
       <>
       <img className="hero-image" src={require("./images/yellowbrickroad2.jpeg")} alt='Wizard of Oz'/>
+      
       <div className='hero-text'>
         <h1>The Quizard of Oz</h1>
         <div className='flex-container'>
+        <PlaySound />
           <div><Form getQuestions={getQuestions} getPlayerName={getPlayerName}/></div>
           <div className="scores-button"><button onClick={toggleScoresDisplay}>{ displayScores ? "Hide Scores" : "Show Scores" }</button>
           { displayScores ? <Scores scores={scores} /> : ""}</div>
