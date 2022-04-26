@@ -25,7 +25,7 @@ const Form = ({getQuestions, getPlayerName, loadPlayerScores}) => {
         event.preventDefault();
         getQuestions(categoryInput, difficultyInput);
         getPlayerName(nameInput);
-        // loadPlayerScores(nameInput);
+        loadPlayerScores(nameInput);
         setNameInput('');
         setCategoryInput('');
         setDifficultyInput('');

@@ -26,7 +26,7 @@ function App() {
   // const [answers, setAnswers] = useState([]);
 
   const filterScores = (scores, name) => {
-    // filters by name
+    return scores.filter(obj => obj.name === name);
   }
 
   const loadPlayerScores = (name) => {
