@@ -63,10 +63,10 @@ const Form = ({getQuestions}) => {
         ]
 
         const categoryNodes = categories.map((category, index) => {
-            return <option value={index + 9} selected={categoryInput === index + 9}>{category}</option>
+            return <option value={index + 9}>{category}</option>
         })
         const difficultyNodes = difficulties.map(difficulty => {
-            return <option value={difficulty} selected={difficultyInput === difficulty}>{difficulty}</option>
+            return <option value={difficulty}>{difficulty}</option>
         })
     
     return (
@@ -78,12 +78,12 @@ const Form = ({getQuestions}) => {
             <p>Choose a category and the difficulty</p>
             <div className="select">
 
-            <select className='mySelect' onChange={handleCategory} required>
-            <option value="" disabled selected={categoryInput === ""}>Choose a category</option>
+            <select className='mySelect' onChange={handleCategory} value={categoryInput} required>
+            <option value="" disabled >Choose a category</option>
             {categoryNodes}
             </select>  
-            <select className='mySelect' onChange={handleDifficulty} required>
-            <option value="" disabled selected={difficultyInput === ""}>Choose difficulty</option>
+            <select className='mySelect' onChange={handleDifficulty} value={difficultyInput} required>
+            <option value="" disabled >Choose difficulty</option>
             {difficultyNodes}
             </select>
             </div>
