@@ -1,5 +1,6 @@
 // import {getScores} from '../QuizService.js'
 // import {useState, useEffect} from 'react';
+import './Scores.css'
 
     const Scores = ({scores}) => {
 
