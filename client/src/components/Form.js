@@ -1,6 +1,9 @@
 import {useState} from 'react';
 import './Form.css';
 
+// ASYNC FUNCTION WHICH SETS THE STATE FOR USERNAME/CATEGORY INPUT AND LEVEL OF DIFFICULTY
+// TAKES GETQUESTIONS, GET PLAYERNAME, LOADPLAYERSCORE AS PARAMETER
+
 const Form = ({getQuestions, getPlayerName, loadPlayerScores}) => {
 
     const [nameInput, setNameInput] = useState('')
@@ -9,6 +12,7 @@ const Form = ({getQuestions, getPlayerName, loadPlayerScores}) => {
     
     // const [formData, setFormData] = useState([]);
 
+    // FUNCTIONS TO HANDLE THE STATES BY TARGETING THE EVENT AND IT'S VALUE
     const handleName = (event) => {
         setNameInput(event.target.value)
     }
@@ -31,6 +35,9 @@ const Form = ({getQuestions, getPlayerName, loadPlayerScores}) => {
         setDifficultyInput('');
     }
     
+    // HARDCODING AN ARRAY OF CATEGORIES PROVIDED BY THE API - 
+    // COULD HAVE BEEN RETRIEVED DIFFERENTLY THOUGH
+
     const categories = [
         "General Knowledge",
         "Entertainment: Books",
@@ -64,13 +71,21 @@ const Form = ({getQuestions, getPlayerName, loadPlayerScores}) => {
             "hard"
         ]
 
+// ASSIGNING FUNCTION TO CONST CATEGORYNODES WHICH WE MAP THROUGH. 
+// PASSING IN CATEGORY AND ITS INDEX, RETURNING INDEX =9 BECAUSE CATEGORY STARTS AT INDEX 10
+
         const categoryNodes = categories.map((category, index) => {
             return <option value={index + 9}>{category}</option>
         })
+
+// ASSIGNING FUNCTION TO CONST DIFFICULTYNODES WHICH WE MAP THROUGH, THEN RETURNS EACH LEVEL
         const difficultyNodes = difficulties.map(difficulty => {
             return <option value={difficulty}>{difficulty}</option>
         })
     
+// RETURNING THE FORM AND HANDLE EVENT FUNCTIONS, PASSING IN VARIABLES FOR THE ONCHANGE EVENT.
+// PASSING DOWN THE NODES AND INPUT AS VALUES.
+
     return (
         <div className='form'>
         <form onSubmit={handleFormSubmit}>

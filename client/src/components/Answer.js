@@ -1,5 +1,6 @@
 // import './Answer.css'
 
+// FUNCTION
 const Answer = ({question, userAnswer, correctAnswer}) => {
 
     return (

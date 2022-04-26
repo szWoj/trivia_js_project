@@ -5,6 +5,9 @@ import QuizList from './components/QuizList';
 import Scores from './components/Scores';
 import { getScores, postScores } from './ScoresServices';
 
+// SETTING UP STATE FOR THE  QUESTIONS, SCORES, DISPLAYSCORES AND PLAYERNAME (string)
+// SETDISPLAY USESTATE IS FALSE BECAUSE IT RESETS THE SCORES AFTER EACH GAME
+// [] FOR SCORES BECAUSE WE KEEP ADDING THEM DURING THE GAME
 
 function App() {
 
@@ -25,9 +28,12 @@ function App() {
   // const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
   // const [answers, setAnswers] = useState([]);
 
+  // FILTER THROUGH THE SCORES TO RETURN THEM BASED ON USER NAME AND IF OBJECT NAME === NAME
   const filterScores = (scores, name) => {
     return scores.filter(obj => obj.name === name);
   }
+
+  // FILTER THROUGH THE SCORES AFTER THE GAME TO RETURN THEM BASED ON USER NAME 
 
   const loadPlayerScores = (name) => {
     getScores()
@@ -43,13 +49,16 @@ function App() {
   //       })
   // }
 
-
+// FUNCTION TO FETCH AND THEN RENDER API AND THE SETQUESTION
   const getQuestions = (category, difficulty) => {
     fetch(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`)
     .then(res => res.json())
     .then(res => setQuestions(res.results))
   }
   
+// FUNCTION TO USE ADDSCORE TO NEWSCORE VIA THE SPREAD OPERATOR. POSTSCORES TAKES IN NEWSCORES
+// THEN PUSHES TO NEWSCORE AND SETSCORES TO NEWSCORES
+
   const addScore = (newScore) => {
     const newScores = [...scores]
     postScores(newScore)
@@ -59,14 +68,21 @@ function App() {
     })
   }
 
+  // TOGGLE TO SET DISPLAY SCORES WHEN HIT BUTTON SHOW SCORES
   const toggleScoresDisplay = () => {
     setDisplayScores(!displayScores);
   }
+
+  // FUNCTION TO GET AND SET PLAYERNAME AND TAKES IN NEW NAME. PLAYERNAME PASSED DOWN TO FORM COMPONENT
+  // TO getQuestions AND PLAYERNAME AND THEN LOAD SCORES 
 
   const getPlayerName = (newName) => {
     setPlayerName(newName)
   }
 
+  // DIV FOR BACKGROUND IMAGE AND TEXT - FORM ON THAT IMAGE
+  // RETURN FORM COMPONENT, TOGGLE BUTTON WITH CONDITIONAL FOR DISPLAY SCORES, QUIZLIST AND SCORES WITH PLAYERNAME
+  
   return (
       <>
       <img className="hero-image" src={require("./images/yellowbrickroad2.jpeg")} alt='Wizard of Oz'/>
