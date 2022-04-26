@@ -6,9 +6,9 @@ app.use(cors());
 app.use(express.json());
 
 const MongoClient = require('mongodb').MongoClient;
-const createRouter = require('./helpers/create_router.js');
+const createRouter = require('./helpers/createRouter');
 
-MongoClient.connect('mongodb://0.0.0.0:27017', { useUnifiedTopology: true })
+MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
   .then((client) => {
     const db = client.db('quizzes');
     const scoresCollection = db.collection('scores');
