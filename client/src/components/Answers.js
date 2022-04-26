@@ -1,7 +1,12 @@
 import Answer from "./Answer";
-
+import React, {useState, useEffect} from 'react';
+import { getScores } from "../ScoresServices";
 const Answers = ({questions, answers, score}) => {
 
+    
+
+    
+    
     const answersDisplay = [];
 
     for(let i = 0; i < questions.length; i++){
