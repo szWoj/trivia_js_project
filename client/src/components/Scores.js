@@ -40,6 +40,8 @@ import './Scores.css'
     
         return (
             <>
+            {/* // <div className='fixedHeightScores'>
+            // <div className="scores"> */}
                 {scoresDisplay}
             </>
         )

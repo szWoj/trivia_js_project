@@ -62,12 +62,10 @@ function App() {
         <h1>The Quizard of Oz</h1>
         <div className='flex-container'>
           <div><Form getQuestions={getQuestions} getPlayerName={getPlayerName}/></div>
-          <div className="scores-button"><button onClick={toggleScoresDisplay}>{ displayScores ? "Hide Scores" : "Show Scores" }</button>
-          {/* <div className='fixedHeightScores'>
-          <div className="scores"> */}
-          { displayScores ? <Scores scores={scores} /> : ""}</div>
-          {/* </div>
-          </div> */}
+          <div className="scores-button"><button onClick={toggleScoresDisplay}>{ displayScores ? "Hide Scores" : "Show Scores" }</button></div>
+         
+          { displayScores ? <Scores scores={scores} /> : ""}
+         
           <div><QuizList questions={questions} addScore={addScore} playerName={playerName}/></div>
         </div>
       </div>
