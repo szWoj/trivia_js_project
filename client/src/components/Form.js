@@ -78,12 +78,12 @@ const Form = ({getQuestions}) => {
             <p>Choose a category and the difficulty</p>
             <div className="select">
 
-            <select className='mySelect' onChange={handleCategory}>
-            <option value="" disabled selected>Choose a category</option>
+            <select className='mySelect' onChange={handleCategory} value={categoryInput} required>
+            <option value="" disabled >Choose a category</option>
             {categoryNodes}
             </select>  
-            <select className='mySelect' onChange={handleDifficulty}>
-            <option value="" disabled selected>Choose difficulty</option>
+            <select className='mySelect' onChange={handleDifficulty} value={difficultyInput} required>
+            <option value="" disabled >Choose difficulty</option>
             {difficultyNodes}
             </select>
             </div>
