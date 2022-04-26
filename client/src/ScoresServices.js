@@ -3,7 +3,7 @@ const baseUrl = 'http://localhost:5000/api/scores/';
 export const getScores = ()=>
 
 {
-    return  fetch(baseUrl)
+    return fetch(baseUrl)
     .then(re=> re.json())
 }
 
