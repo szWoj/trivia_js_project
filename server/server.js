@@ -15,8 +15,8 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     const scoresRouter = createRouter(scoresCollection);
     app.use('/api/scores', scoresRouter);
   })
-  .catch(console.err);
+  .catch(err => console.error(err));
 
 app.listen(5000, function () {
-  console.log('Listening');
+  console.log(`Listening on port ${ this.address().port }`);
 });

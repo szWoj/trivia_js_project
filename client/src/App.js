@@ -32,7 +32,7 @@ function App() {
     const newScores = [...scores]
     postScores(newScore)
     .then(res => {
-      newScore.push(res)
+      newScores.push(res)
       setScores(newScores)
     })
   }
