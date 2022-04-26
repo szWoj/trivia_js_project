@@ -3,10 +3,13 @@ import './App.css';
 import Form from './components/Form';
 import QuizList from './components/QuizList';
 import Scores from './components/Scores';
+import UserName from './components/UserName';
 import { getScores, postScores } from './ScoresServices';
 
 
 function App() {
+
+  const [username, setUsername] = useState("");
 
   const[questions, setQuestions] = useState([
       {
@@ -24,12 +27,13 @@ function App() {
 
   // const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
   // const [answers, setAnswers] = useState([]);
+
   useEffect(()=>{
-    getScores()
-    .then((res)=>{
-        setScores(res)
-    })
-}, [])
+      getScores()
+      .then((res)=>{
+          setScores(res)
+      })
+  }, [])
 
 
   const getQuestions = (category, difficulty) => {
@@ -60,12 +64,13 @@ function App() {
       <img className="hero-image" src={require("./images/yellowbrickroad2.jpeg")} alt='Wizard of Oz'/>
       <div className='hero-text'>
         <h1>The Quizard of Oz</h1>
+        { username === "" ? <UserName /> :
         <div className='flex-container'>
           <div><Form getQuestions={getQuestions} getPlayerName={getPlayerName}/></div>
           <div className="scores-button"><button onClick={toggleScoresDisplay}>{ displayScores ? "Hide Scores" : "Show Scores" }</button>
           { displayScores ? <Scores scores={scores} /> : ""}</div>
           <div><QuizList questions={questions} addScore={addScore} playerName={playerName}/></div>
-        </div>
+        </div>}
       </div>
       <footer>2022 - Created by Annika, Daniel and Szymon - Smart as fuck</footer>
     </>
