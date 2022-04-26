@@ -9,7 +9,7 @@ const QuizItem = ({currentQuestion, takeAnswer, nextQuestion, choices, currentAn
     return (
         <>
         <input type="radio" name="choices" id={index} value={choice} onChange={handleAnswer} checked={choice === currentAnswer}/>
-        <label htmlFor={index}>{choice.replace(/&quot;|&#039;|&Idquo;|&rdquo;|;|&rsquo;/g, "'").replace(/&euml;/g, "ë").replace(/&ntilde/g, "ñ").replace(/&uacute;/g, "ú").replace(/&aacute;/g, "á").replace(/&amp'/g, "&")}</label>
+        <label htmlFor={index}>{choice.replace(/&quot;|&#039;|&Idquo;|&rdquo;|;|&rsquo;/g, "'").replace(/&euml;/g, "ë").replace(/&ntilde/g, "ñ").replace(/&uacute;/g, "ú").replace(/&aacute;|&eacute/g, "á").replace(/&amp'/g, "&")}</label>
         <br></br>
         </>
     )
@@ -24,7 +24,7 @@ const QuizItem = ({currentQuestion, takeAnswer, nextQuestion, choices, currentAn
 
     return (
         <div className='question'>
-            <h2>{currentQuestion.question.replace(/&quot;|&#039;|&Idquo;|&rdquo;|;|&rsquo;/g, "'").replace(/&euml;/g, "ë").replace(/&ntilde/g, "ñ").replace(/&uacute;/g, "ú").replace(/&aacute;/g, "á").replace(/&amp'/g, "&")}</h2>
+            <h2>{currentQuestion.question.replace(/&quot;|&#039;|&Idquo;|&rdquo;|;|&rsquo;/g, "'").replace(/&euml;/g, "ë").replace(/&ntilde/g, "ñ").replace(/&uacute;/g, "ú").replace(/&aacute;|&eacute/g, "á").replace(/&amp'/g, "&")}</h2>
             {currentQuestion.question !== '' ? choicesRadio : ""}
             {choicesRadio.length > 1 ? <button onClick={handleClick}>{answers.length === 10 ? "Submit Quiz" : "Next Question"}</button> : ""}
         {/* <img className="wizard" src={require("../images/wizard2.jpeg")} alt='Wizard of Oz'/>  */}

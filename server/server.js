@@ -13,6 +13,9 @@ MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
     const db = client.db('quizzes');
     const scoresCollection = db.collection('scores');
     const scoresRouter = createRouter(scoresCollection);
+    
+    
+    
     app.use('/api/scores', scoresRouter);
   })
   .catch(err => console.error(err));

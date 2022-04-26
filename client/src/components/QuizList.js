@@ -5,7 +5,7 @@ import './QuizList.css'
 import './QuizItem.css'
 
 
-const QuizList = ({questions, addScore}) => {
+const QuizList = ({questions, addScore, playerName}) => {
 
     const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
     const [answers, setAnswers] = useState([]);
@@ -73,6 +73,8 @@ const QuizList = ({questions, addScore}) => {
         const newResult = {};
         const category = currentQuestion.category;
         const difficulty = currentQuestion.difficulty;
+        const name = playerName;
+        newResult["name"] = name;
         newResult["category"] = category;
         newResult["difficulty"] = difficulty;
         newResult["score"] = newScore;
