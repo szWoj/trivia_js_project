@@ -30,7 +30,6 @@ function App() {
   }
   
   const addScore = (newScore) => {
-    // setScores([...scores, newScore]); //comment out?
     const newScores = [...scores]
     postScores(newScore)
     .then(res => {
@@ -53,7 +52,6 @@ function App() {
           <div className="scores-button"><button onClick={toggleScoresDisplay}>{ displayScores ? "Hide Scores" : "Show Scores" }</button>
           { displayScores ? <Scores scores={scores} /> : ""}</div>
           <div><QuizList questions={questions} addScore={addScore} /></div>
-          <div><Scores scores={scores} /></div>
         </div>
       </div>
       <footer>2022 - Created by Annika, Daniel and Szymon - Smart as fuck</footer>
