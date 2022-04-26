@@ -3,8 +3,12 @@ use quizzes;
 db.dropDatabase();
 
 db.scores.insertOne(
-   { category : "Science",
-    result :  6
-}
+    
+    { 
+        name: "developer",
+        category : "Science",
+        difficulty : "hard",
+        score :  6
+    }
 
 );
