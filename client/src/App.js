@@ -43,9 +43,10 @@ function App() {
         <h1>The Quizard of Oz</h1>
         <div className='flex-container'>
           <div><Form getQuestions={getQuestions}/></div>
-          <div><button onClick={toggleScoresDisplay}>{ displayScores ? "Hide Scores" : "Show Scores" }</button></div>
+          <div className="scores-button"><button onClick={toggleScoresDisplay}>{ displayScores ? "Hide Scores" : "Show Scores" }</button></div>
           <div>{ displayScores ? <Scores scores={scores} /> : ""}</div>
           <div><QuizList questions={questions} addScore={addScore} /></div>
+          <div><Scores scores={scores} /></div>
         </div>
       </div>
       <footer>2022 - Created by Annika, Daniel and Szymon - Smart as fuck</footer>
