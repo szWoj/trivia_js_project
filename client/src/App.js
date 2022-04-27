@@ -47,7 +47,7 @@ function App() {
   const getQuestions = (category, difficulty) => {
     fetch(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`)
     .then(res => res.json())
-    .then(res => setQuestions(res.results))
+    .then(res => setQuestions(res.results.length === 0 ? [{question: 'Sorry, there are currently no questions for this topic / difficulty level. Please try again.', correct_answer: '', incorrect_answers: []}] : res.results))
   }
   
   const addScore = (newScore) => {
