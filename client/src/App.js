@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import './App.css';
 import Form from './components/Form';
+import PlaySong from './components/PlaySong';
 import QuizList from './components/QuizList';
 import Scores from './components/Scores';
 import { getScores, postScores } from './ScoresServices';
@@ -93,6 +94,7 @@ function App() {
           <div className="scores-button"><button onClick={toggleScoresDisplay}>{ displayScores ? "Hide Scores" : "Show Scores" }</button></div>
           <div>{ displayScores ? <Scores scores={scores} /> : ""}</div>
           <div><QuizList questions={questions} addScore={addScore} playerName={playerName}/></div>
+        <PlaySong/>
         </div>
       </div>
       <footer>2022 - Created by Annika, Daniel and Szymon - Smart as fuck</footer>

@@ -1,6 +1,7 @@
 // import './Answer.css'
 
-// FUNCTION
+// FUNCTION TO RETURN THE USER ANSWER AND CORRECT ONE, PASSING IN BELOW WITH A TRUE FALSE CONDITION
+// REPLACING ODD DIGITS WITH CORRECT DOUBLE QUOTATIONS
 const Answer = ({question, userAnswer, correctAnswer}) => {
 
     return (

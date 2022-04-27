@@ -4,6 +4,10 @@ import OverTheRainbow from './static/OverTheRainbow'
 
 const PlaySong =(handleSongLoading, handleSongPlaying, handleSongFinishedPlaying) =>{
 
+// FUNCTION TO PLAY SOUND IN THE BACKGROUND UPON PLAY/STOP BUTTON USE
+// URL LOADER AND REACT SOUND NEEDS TO BE INSTALLED. MP3 ENDING NEEDS TO BE REMOVED 
+// FROM THE ACTUAL FILE IN STATIC FOLDER
+
 
     const [isPlaying, setIsPlaying] = useState(false);
 

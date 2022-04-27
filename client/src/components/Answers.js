@@ -4,7 +4,10 @@ import { getScores } from "../ScoresServices";
 const Answers = ({questions, answers, score}) => {
 
     
-
+// CREATING AN EMPTY ARRAY TO DISPLAY THE ANSWERS AND TO PUSH TO IT. 
+// ANSWER = INDEX OF THE QUESTION, USER ANSWER AND THE CORRECT ONE WHICH IS BEING PUSHED.
+// THEN WE CREATE A NODES LIST AND MAP THROUGH THE ARRAY, THEN RETURN QUESTION, USER ANSWER
+// AND CORRECT ANSWER
     
     
     const answersDisplay = [];
