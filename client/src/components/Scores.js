@@ -2,7 +2,7 @@
 // import {useState, useEffect} from 'react';
 import './Scores.css'
 
-    const Scores = ({scores}) => {
+    const Scores = ({scores, playerName}) => {
 
  
         const scoresDisplay = scores === [] ? <p>No Scores Yet</p> : scores.map((score) => {
@@ -40,6 +40,7 @@ import './Scores.css'
             <>
             <div className='fixedHeightScores'>
             <div className="scores">
+            <h2>Scores for {playerName}</h2>
                 {scoresDisplay}
             </div>
             </div>
