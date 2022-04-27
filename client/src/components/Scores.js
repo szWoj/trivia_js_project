@@ -38,9 +38,11 @@ import './Scores.css'
     
         return (
             <>
-            {/* // <div className='fixedHeightScores'>
-            // <div className="scores"> */}
+            <div className='fixedHeightScores'>
+            <div className="scores">
                 {scoresDisplay}
+            </div>
+            </div>
             </>
         )
 }

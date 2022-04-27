@@ -12,7 +12,7 @@ const PlaySound = (
     
     return (
         <div>
-            <button onClick={() => setIsPlaying(!isPlaying)}>{!isPlaying ? 'Play' : 'Stop'}</button>
+            <button onClick={() => setIsPlaying(!isPlaying)}>{!isPlaying ? 'Play Song' : 'Stop'}</button>
             <Sound 
                 url={Somewhere_Over_the_Rainbowl}
                 playStatus={isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED}
