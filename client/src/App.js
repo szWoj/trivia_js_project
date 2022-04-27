@@ -23,16 +23,28 @@ function App() {
 
   const [displayScores, setDisplayScores] = useState(false);
 
-  const [playerName, setPlayerName] = useState("")
+  const [playerName, setPlayerName] = useState("");
 
   // const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
   // const [answers, setAnswers] = useState([]);
-  useEffect(()=>{
+
+  const filterScores = (scores, name) => {
+    return scores.filter(obj => obj.name === name);
+  }
+
+  const loadPlayerScores = (name) => {
     getScores()
     .then((res)=>{
-        setScores(res)
+        setScores(filterScores(res, name))
     })
-}, [])
+  }
+
+  // const loadPlayerScores = () => {
+  //       getScores()
+  //       .then((res)=>{
+  //       setScores(res)
+  //       })
+  // }
 
 
   const getQuestions = (category, difficulty) => {
@@ -65,10 +77,10 @@ function App() {
       <div className='hero-text'>
         <h1>The Quizard of Oz</h1>
         <div className='flex-container'>
-        <PlaySound />
-          <div><Form getQuestions={getQuestions} getPlayerName={getPlayerName}/></div>
-          <div className="scores-button"><button onClick={toggleScoresDisplay}>{ displayScores ? "Hide Scores" : "Show Scores" }</button>
-          { displayScores ? <Scores scores={scores} /> : ""}</div>
+          <PlaySound />
+          <div><Form getQuestions={getQuestions} getPlayerName={getPlayerName} loadPlayerScores={loadPlayerScores}/></div>
+          <div className="scores-button"><button onClick={toggleScoresDisplay}>{ displayScores ? "Hide Scores" : "Show Scores" }</button></div>
+          <div>{ displayScores ? <Scores scores={scores} /> : ""}</div>
           <div><QuizList questions={questions} addScore={addScore} playerName={playerName}/></div>
         </div>
       </div>
