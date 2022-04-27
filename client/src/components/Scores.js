@@ -1,5 +1,6 @@
 // import {getScores} from '../QuizService.js'
 // import {useState, useEffect} from 'react';
+import './Scores.css'
 
     const Scores = ({scores}) => {
 
@@ -37,6 +38,8 @@
     
         return (
             <>
+            {/* // <div className='fixedHeightScores'>
+            // <div className="scores"> */}
                 {scoresDisplay}
             </>
         )

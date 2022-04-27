@@ -1,4 +1,4 @@
-// import './Answer.css'
+import './Answer.css'
 
 const Answer = ({question, userAnswer, correctAnswer}) => {
 
