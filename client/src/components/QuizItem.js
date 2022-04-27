@@ -25,7 +25,7 @@ const QuizItem = ({currentQuestion, takeAnswer, nextQuestion, choices, currentAn
     return (
         <div className='question'>
             <h2>{currentQuestion.question.replace(/&quot;|&#039;|&Idquo;|&rdquo;|;|&rsquo;/g, "'").replace(/&euml;/g, "ë").replace(/&ntilde/g, "ñ").replace(/&uacute;/g, "ú").replace(/&aacute;|&eacute/g, "á").replace(/&amp'/g, "&")}</h2>
-            {currentQuestion.correct_answer !== '' ? choicesRadio : ""}
+            {currentQuestion.correct_answer !== '' ? choicesRadio : <img className='wizard-image' src={require('../images/wizard2.jpeg')} alt="the wizard"/>}
             {choicesRadio.length > 1 ? <button onClick={handleClick}>{answers.length === 10 ? "Submit Quiz" : "Next Question"}</button> : ""}
         {/* <img className="wizard" src={require("../images/wizard2.jpeg")} alt='Wizard of Oz'/>  */}
         </div>
