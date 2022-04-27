@@ -46,11 +46,12 @@ h1{
 .flex-container{
   display: flex;
   justify-content: space-evenly;
-  flex-direction: column
+  flex-direction: column;
 }
 
 .flex-container > div{
   width: 500px;
+  flex-shrink: 1;
 }
 
 /* Responsive layout  - one column layout instead of a two-column layout */
