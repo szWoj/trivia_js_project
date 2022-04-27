@@ -1,0 +1,26 @@
+/* STYLING FOR THE DIV AND SCROLLBAR INSIDE SCORES CONTAINER    */
+
+
+.scores{
+    font-size: 15px;
+    font-family: "Open Sans";
+    font-weight: bold;
+    width: 480px;
+    height: 200px;
+    margin: 20px;
+    padding: 5px;
+    border: 1.5px solid black;
+    background-color: rgb(25, 145, 37, 0.6);
+    overflow: auto;   
+  }
+
+.fixedHeightScores{
+    float:left;
+    height: 250px;
+    width:250px; 
+    padding:10px;
+    border: 1px;
+    border-color: black;
+    box-sizing: border-box;
+}
+
