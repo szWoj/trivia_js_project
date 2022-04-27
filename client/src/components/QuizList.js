@@ -22,7 +22,6 @@ const QuizList = ({questions, addScore, playerName}) => {
         const randomIndex = Math.floor(Math.random() * 4);
         options.splice(randomIndex, 0, currentQuestion.correct_answer);
         setChoices(options);
-        // addDefaultAnswer();
     }
 
     // const addDefaultAnswer = () => {

@@ -6,9 +6,9 @@ db.scores.insertOne(
     
     { 
         name: "developer",
-        category : "Science",
+        category : "Science: Computers",
         difficulty : "hard",
-        score :  6
+        score :  10
     }
 
 );
