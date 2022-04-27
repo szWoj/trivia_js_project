@@ -35,13 +35,18 @@ h1{
   border-radius: 60%;
   width: 350px;
   display: flex;
-  
+}
+
+.wizard-image {
+  border-radius: 60%;
+  width: 100%;
+  height: auto;
 }
 
 .flex-container{
   display: flex;
   justify-content: space-evenly;
-  flex-direction:column
+  flex-direction: column
 }
 
 .flex-container > div{

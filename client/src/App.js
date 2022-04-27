@@ -77,7 +77,7 @@ function App() {
       <div className='hero-text'>
         <h1>The Quizard of Oz</h1>
         <div className='flex-container'>
-          <PlaySound />
+          <div><PlaySound /></div>
           <div><Form getQuestions={getQuestions} getPlayerName={getPlayerName} loadPlayerScores={loadPlayerScores}/></div>
           <div className="scores-button"><button onClick={toggleScoresDisplay}>{ displayScores ? "Hide Scores" : "Show Scores" }</button></div>
           <div>{ displayScores ? <Scores scores={scores} /> : ""}</div>
@@ -91,5 +91,3 @@ function App() {
 
 export default App;
 
-
-            
