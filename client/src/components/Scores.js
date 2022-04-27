@@ -4,10 +4,8 @@ import './Scores.css'
 
     const Scores = ({scores}) => {
 
-        let scoresDisplay;
-
-        if(scores.length > 0){
-            scoresDisplay = scores.map((score) => {
+ 
+        const scoresDisplay = scores === [] ? <p>No Scores Yet</p> : scores.map((score) => {
                 return (
                     <>
                         <h3>{score.score} out of 10</h3>
@@ -16,7 +14,7 @@ import './Scores.css'
                     </>
                 )
             })
-        }
+        
         // const [scores, setScores] = useState([]);
     
         // const baseURL = 'http://localhost:5000/api/scores/'

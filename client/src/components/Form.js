@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import './Form.css';
 
-const Form = ({getQuestions, getPlayerName}) => {
+const Form = ({getQuestions, getPlayerName, loadPlayerScores}) => {
 
     const [nameInput, setNameInput] = useState('')
     const [categoryInput, setCategoryInput] = useState('')
@@ -25,6 +25,7 @@ const Form = ({getQuestions, getPlayerName}) => {
         event.preventDefault();
         getQuestions(categoryInput, difficultyInput);
         getPlayerName(nameInput);
+        loadPlayerScores(nameInput);
         setNameInput('');
         setCategoryInput('');
         setDifficultyInput('');
