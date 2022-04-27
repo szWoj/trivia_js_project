@@ -84,7 +84,7 @@ function App() {
           <div><QuizList questions={questions} addScore={addScore} playerName={playerName}/></div>
         </div>
       </div>
-      <footer>2022 - Created by Annika, Daniel and Szymon - Smart as fuck</footer>
+      <footer>2022 - Created by Annika, Daniel and Szymon - In Glorious Technicolor</footer>
     </>
   );
 }
