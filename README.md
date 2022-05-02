@@ -21,3 +21,16 @@ API, Libraries, Resources
 https://opentdb.com/api_config.php Open Trivia to generate the trivia questions
 https://www.highcharts.com/ HighCharts is an open-source library for rendering responsive charts.
 
+Instructions to run this app -
+
+Clone this app 
+
+Server side - 
+npm run server:dev (listens on localhost:5000)
+npm mongod
+
+Client side - 
+npm install
+npm install react-sound
+npm start - opens browser on localhost:3000
+
