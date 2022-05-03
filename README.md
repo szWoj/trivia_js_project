@@ -27,7 +27,10 @@ Clone this app
 
 Server side - 
 npm run server:dev (listens on localhost:5000)
-npm mongod
+to run MongoDB : sudo mongod --dbpath /System/Volumes/Data/data/db
+
+If you are then receiving exit code 48 you will need to change the port on which Mongod runs
+sudo mongod --dbpath /System/Volumes/Data/data/db -port 27018
 
 Client side - 
 npm install
