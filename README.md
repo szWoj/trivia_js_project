@@ -21,3 +21,19 @@ API, Libraries, Resources
 https://opentdb.com/api_config.php Open Trivia to generate the trivia questions
 https://www.highcharts.com/ HighCharts is an open-source library for rendering responsive charts.
 
+Instructions to run this app -
+
+Clone this app 
+
+Server side - 
+npm run server:dev (listens on localhost:5000)
+to run MongoDB : sudo mongod --dbpath /System/Volumes/Data/data/db
+
+If you are then receiving exit code 48 you will need to change the port on which Mongod runs
+sudo mongod --dbpath /System/Volumes/Data/data/db -port 27018
+
+Client side - 
+npm install
+npm install react-sound
+npm start - opens browser on localhost:3000
+
