@@ -38,6 +38,6 @@ npm install react-sound
 npm start - opens browser on localhost:3000
 
 
-<img src="./src/images/Quiz.png" width="50%" height="50%">
-<img src="./src/images/Question.png" width="50%" height="50%">
-<img src='./src/images/AnswersScores.png" width="50%" height="50%">
+<img src="../images/Quiz.png" width="50%" height="50%">
+<img src="../images/Question.png" width="50%" height="50%">
+<img src="../images/AnswersScores.png" width="50%" height="50%">
