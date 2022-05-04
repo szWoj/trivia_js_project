@@ -40,6 +40,10 @@ npm start - opens browser on localhost:3000
 
 Please find link to images presenting our frontend
 
-[Quiz View](https://github.com/szWoj/trivia_js_project/blob/main/client/src/images/Quiz.png) 
-[Questions View](https://github.com/szWoj/trivia_js_project/blob/main/client/src/images/Question.png) 
-[Answer and Scores View](https://github.com/szWoj/trivia_js_project/blob/main/client/src/images/AnswersScores.png) 
+[Image of the Quiz](https://github.com/szWoj/trivia_js_project/blob/main/client/src/images/Quiz.png) /
+
+[Image of Questions ](https://github.com/szWoj/trivia_js_project/blob/main/client/src/images/Question.png) /
+
+[Image of Answers and Scores](https://github.com/szWoj/trivia_js_project/blob/main/client/src/images/AnswersScores.png) /
+
+[Image of background image](https://github.com/szWoj/trivia_js_project/blob/main/client/src/images/Quiz.png) 
