@@ -38,6 +38,4 @@ npm install react-sound
 npm start - opens browser on localhost:3000
 
 
-<img src="../images/Quiz.png" width="50%" height="50%">
-<img src="../images/Question.png" width="50%" height="50%">
-<img src="../images/AnswersScores.png" width="50%" height="50%">
+[Quiz](https://github.com/szWoj/trivia_js_project/blob/main/client/src/images/Quiz.png) 
