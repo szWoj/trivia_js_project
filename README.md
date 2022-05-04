@@ -46,4 +46,4 @@ Please find link to images presenting our frontend
 
 [Image of Answers and Scores](https://github.com/szWoj/trivia_js_project/blob/main/client/src/images/AnswersScores.png) /
 
-[Image of background image](https://github.com/szWoj/trivia_js_project/blob/main/client/src/images/Quiz.png) 
+[Image of background image](https://github.com/szWoj/trivia_js_project/blob/main/client/src/images/yellowbrickroad2.jpeg) 
