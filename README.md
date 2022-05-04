@@ -38,4 +38,8 @@ npm install react-sound
 npm start - opens browser on localhost:3000
 
 
-[Quiz](https://github.com/szWoj/trivia_js_project/blob/main/client/src/images/Quiz.png) 
+Please find link to images presenting our frontend
+
+[Quiz View](https://github.com/szWoj/trivia_js_project/blob/main/client/src/images/Quiz.png) 
+[Questions View](https://github.com/szWoj/trivia_js_project/blob/main/client/src/images/Question.png) 
+[Answer and Scores View](https://github.com/szWoj/trivia_js_project/blob/main/client/src/images/AnswersScores.png) 
