@@ -11,7 +11,8 @@
     "react-scripts": "5.0.1",
     "react-sound": "^1.2.0",
     "use-sound": "^4.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "homepage": "https://annikaneumann.github.io/trivia_js_prokect/"
   },
   "scripts": {
     "start": "react-scripts start",
