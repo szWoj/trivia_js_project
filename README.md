@@ -47,3 +47,11 @@ Please find link to images presenting our frontend
 [Image of Answers and Scores](https://github.com/szWoj/trivia_js_project/blob/main/client/src/images/AnswersScores.png) /
 
 [Image of background image](https://github.com/szWoj/trivia_js_project/blob/main/client/src/images/yellowbrickroad2.jpeg) 
+![Screen Shot 2022-05-21 at 16 42 39](https://user-images.githubusercontent.com/79700458/169659063-83f6e163-70c9-4a14-bd97-5f4e29b3fbe6.png)
+![Screen Shot 2022-05-21 at 16 42 59](https://user-images.githubusercontent.com/79700458/169659073-2b3cd725-7dca-4990-a222-1172219afe86.png)
+![Screen Shot 2022-05-21 at 16 42 57](https://user-images.githubusercontent.com/79700458/169659086-c196c6d1-d1b4-4017-a8a7-db194af12086.png)
+![Screen Shot 2022-05-21 at 16 43 06](https://user-images.githubusercontent.com/79700458/169659094-dd5e0fc8-8ca4-4c96-9d0a-d207b4b14a0e.png)
+![Screen Shot 2022-05-21 at 16 43 15](https://user-images.githubusercontent.com/79700458/169659096-934566cc-0392-4b02-9a3b-bdcf7413fcdc.png)
+
+
+
